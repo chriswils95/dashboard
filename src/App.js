@@ -1,19 +1,16 @@
-import { registerLicense } from '@syncfusion/ej2-base';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 import React, { useEffect } from 'react';
 import { FiSettings } from 'react-icons/fi';
-import { BrowserRouter, Redirect, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
 import './App.css';
-import { Footer, Login, Navbar, Sidebar, ThemeSettings } from './components';
+import { Footer, Navbar, Sidebar, ThemeSettings } from './components';
 import { Area, Bar, Calendar, ColorMapping, ColorPicker, Customers, Ecommerce, Editor, Employees, Financial, Kanban, Line, Orders, Pie, Pyramid, Stacked } from './pages';
 
-import { useStateContext } from './context/ContextProvider';
+import { useStateContext } from './contexts/ContextProvider';
 
-registerLicense('ORg4AjUWIQA/Gnt2VVhiQlFadVlJXGFWfVJpTGpQdk5xdV9DaVZUTWY/P1ZhSXxRdk1jXH9fcHRQQmhdVkY=');
 const App = () => {
-  const { setCurrentColor, setCurrentMode, currentMode,
-     activeMenu, currentColor, themeSettings, setThemeSettings,
-    userLogin } = useStateContext();
+  const { setCurrentColor, setCurrentMode, currentMode, activeMenu, currentColor, themeSettings, setThemeSettings } = useStateContext();
 
   useEffect(() => {
     const currentThemeColor = localStorage.getItem('colorMode');
@@ -61,15 +58,14 @@ const App = () => {
             }
           >
             <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full ">
-             {userLogin && <Navbar />}
+              <Navbar />
             </div>
             <div>
               {themeSettings && (<ThemeSettings />)}
 
               <Routes>
-                {/* dashboard  */} 
+                {/* dashboard  */}
                 <Route path="/" element={(<Ecommerce />)} />
-                <Route path="/login" element={(<Login />)} />
                 <Route path="/ecommerce" element={(<Ecommerce />)} />
 
                 {/* pages  */}

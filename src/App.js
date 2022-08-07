@@ -7,7 +7,7 @@ import './App.css';
 import { Footer, Navbar, Sidebar, ThemeSettings } from './components';
 import { Area, Bar, Calendar, ColorMapping, ColorPicker, Customers, Ecommerce, Editor, Employees, Financial, Kanban, Line, Orders, Pie, Pyramid, Stacked } from './pages';
 
-import { useStateContext } from './contexts/ContextProvider';
+import { useStateContext } from './context/ContextProvider';
 
 const App = () => {
   const { setCurrentColor, setCurrentMode, currentMode, activeMenu, currentColor, themeSettings, setThemeSettings } = useStateContext();

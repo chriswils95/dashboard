@@ -32,4 +32,4 @@ const Customers = () => {
   );
 };
 
-export default Customers;
+export default React.memo(Customers);

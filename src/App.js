@@ -1,14 +1,15 @@
+import { registerLicense } from '@syncfusion/ej2-base';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 import React, { useEffect } from 'react';
 import { FiSettings } from 'react-icons/fi';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-
 import './App.css';
 import { Footer, Navbar, Sidebar, ThemeSettings } from './components';
 import { Area, Bar, Calendar, ColorMapping, ColorPicker, Customers, Ecommerce, Editor, Employees, Financial, Kanban, Line, Orders, Pie, Pyramid, Stacked } from './pages';
 
 import { useStateContext } from './context/ContextProvider';
 
+registerLicense('ORg4AjUWIQA/Gnt2VVhiQlFadVlJXGFWfVJpTGpQdk5xdV9DaVZUTWY/P1ZhSXxRdk1jXH9fcHRQQmhdVkY=');
 const App = () => {
   const { setCurrentColor, setCurrentMode, currentMode, activeMenu, currentColor, themeSettings, setThemeSettings } = useStateContext();
 
@@ -19,6 +20,7 @@ const App = () => {
       setCurrentColor(currentThemeColor);
       setCurrentMode(currentThemeMode);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

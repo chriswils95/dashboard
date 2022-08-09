@@ -28,4 +28,4 @@ const Orders = () => {
     </div>
   );
 };
-export default Orders;
+export default React.memo(Orders);

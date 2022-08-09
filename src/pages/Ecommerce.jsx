@@ -338,4 +338,4 @@ const Ecommerce = () => {
   );
 };
 
-export default Ecommerce;
+export default React.memo( Ecommerce );
